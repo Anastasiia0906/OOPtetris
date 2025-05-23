@@ -1,0 +1,88 @@
+﻿<Window x:Class="Tetris.ControlSettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Налаштування керування" 
+        Height="377" 
+        Width="300"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="0,0,0,3"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#3A0CA3"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Height" Value="26"/>
+            <Setter Property="Margin" Value="0,3"/>
+            <Setter Property="Padding" Value="5,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Border Background="#1E1A3D" Padding="10">
+        <StackPanel>
+            <TextBlock Text="Налаштування керування" 
+                     FontSize="18" 
+                     FontWeight="Bold"
+                     Margin="0,0,0,10"/>
+
+            <StackPanel Margin="0,3">
+                <TextBlock Text="Рух вліво:"/>
+                <Button x:Name="LeftKeyButton" Content="Left" 
+                      Click="KeyButton_Click" Tag="Left"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,3">
+                <TextBlock Text="Рух вправо:"/>
+                <Button x:Name="RightKeyButton" Content="Right" 
+                      Click="KeyButton_Click" Tag="Right"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,3">
+                <TextBlock Text="Обертання:"/>
+                <Button x:Name="RotateKeyButton" Content="Up" 
+                      Click="KeyButton_Click" Tag="Rotate"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,3">
+                <TextBlock Text="Пришвидшений спуск:"/>
+                <Button x:Name="DownKeyButton" Content="Down" 
+                      Click="KeyButton_Click" Tag="Down"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,3">
+                <TextBlock Text="Миттєвий спуск:"/>
+                <Button x:Name="DropKeyButton" Content="Space" 
+                      Click="KeyButton_Click" Tag="Drop"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" 
+                      HorizontalAlignment="Right" 
+                      Margin="0,15,0,0">
+                <Button Content="Зберегти" 
+                      Width="70" 
+                      Margin="0,0,8,0" 
+                      Click="OKButton_Click"
+                      Background="#4CC9F0"/>
+                <Button Content="Скасувати" 
+                      Width="70" 
+                      Click="CancelButton_Click"
+                      Background="#7209B7"/>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Window>
